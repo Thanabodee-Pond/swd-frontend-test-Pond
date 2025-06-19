@@ -1,95 +1,76 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useTranslation, I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
+import styles from './LandingPage.module.scss';
+import { Button, Dropdown, Space } from 'antd';
+import { GlobalOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+
+const TestCard = ({ title, description, onClick }: { title: string, description: string, onClick: () => void }) => (
+    <div className={styles.testCard} onClick={onClick}>
+        <h2 className={styles.testTitle}>{title}</h2>
+        <p className={styles.testDescription}>{description}</p>
+    </div>
+);
+
+const LanguageSwitcher = () => {
+    const { i18n } = useTranslation();
+    const handleMenuClick: MenuProps['onClick'] = (e) => {
+        i18n.changeLanguage(e.key);
+    };
+    const items: MenuProps['items'] = [
+        { label: 'English', key: 'en' },
+        { label: 'ไทย', key: 'th' },
+    ];
+    return (
+        <Dropdown menu={{ items, onClick: handleMenuClick }}>
+            <Button>
+                <Space>
+                    <GlobalOutlined />
+                    {i18n.language.toUpperCase()}
+                </Space>
+            </Button>
+        </Dropdown>
+    );
+};
+
+
+const LandingPageContent = () => {
+    const { t } = useTranslation();
+    const router = useRouter();
+
+    return (
+        <main className={styles.container}>
+            <div className={styles.langSwitcher}>
+                <LanguageSwitcher />
+            </div>
+            <div className={styles.cardGrid}>
+                <TestCard 
+                    title={t('test1Title')} 
+                    description={t('test1Desc')} 
+                    onClick={() => router.push('/layout-style')}
+                />
+                 <TestCard 
+                    title={t('test2Title')} 
+                    description={t('test2Desc')} 
+                    onClick={() => alert('API Test page is not implemented yet.')} 
+                />
+                 <TestCard 
+                    title={t('test3Title')} 
+                    description={t('test3Desc')} 
+                    onClick={() => router.push('/form')}
+                />
+            </div>
+        </main>
+    );
+};
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    return (
+        <I18nextProvider i18n={i18n}>
+            <LandingPageContent />
+        </I18nextProvider>
+    );
 }

@@ -1,0 +1,85 @@
+/* src/app/form/FormPage.module.scss (ฉบับ Final) */
+
+.pageContainer {
+  padding: 2rem 4rem;
+}
+
+.mainContent {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .pageTitle {
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.formContainer {
+  color: black;
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 1rem;
+  margin-bottom: 5rem;
+  max-width: 1000px; 
+  margin-left: auto;  
+  margin-right: auto;  
+
+  :global(.ant-form-item-label > label) {
+    color: black !important;
+    font-weight: 500;
+  }
+
+  :global(.ant-form-item-required .ant-form-item-label > label::before) {
+    color: red !important;
+    margin-inline-end: 6px !important;
+  }
+}
+
+/* [ตรวจสอบที่นี่] ส่วนควบคุมตาราง */
+.tableControlsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* <-- บรรทัดนี้สำคัญที่สุดในการจัดกลางแนวตั้ง */
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.tableControlsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* <- กฎสำหรับจัดชิดซ้าย (ค่าเริ่มต้น) */
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+
+  /* กฎพิเศษสำหรับ Pagination เท่านั้น */
+  :global(.ant-pagination) {
+    align-self: flex-end; /* <- สั่งให้ Pagination ไปชิดขวา */
+  }
+}
+
+.citizenIdSpace {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.citizenIdSpace {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  /* เพิ่มโค้ดส่วนนี้เข้าไป */
+  :global(.ant-input) {
+    text-align: center;
+  }
+}
+

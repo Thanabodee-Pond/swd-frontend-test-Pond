@@ -1,0 +1,47 @@
+/* src/app/LandingPage.module.scss */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .cardGrid {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .testCard {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .testTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333333; /* [เพิ่มบรรทัดนี้] กำหนดสีตัวอักษรให้เป็นสีเทาเข้ม */
+  }
+  
+  .testDescription {
+    font-size: 1rem;
+    color: #666666; /* [แก้ไขบรรทัดนี้] กำหนดสีตัวอักษรให้เป็นสีเทาที่อ่อนลง */
+  }
+  
+  .langSwitcher {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }

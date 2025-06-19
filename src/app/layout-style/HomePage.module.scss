@@ -1,0 +1,113 @@
+/* src/app/layout-style/HomePage.module.scss (ฉบับสุดท้าย) */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: black;
+}
+
+.shapeGrid {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: -10rem;
+}
+
+.shapeRow {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.actionRow {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* [เพิ่ม] Style สำหรับจัดแถวสลับฟันปลา */
+.isStaggered {
+  margin-left: 132px; /* (ความกว้างการ์ด/2) + (gap/2) */
+}
+
+.shapeCard {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 220px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 3px solid transparent;
+  box-shadow: black;
+
+  &:hover {
+    transform: translateY(-8px);
+    background-color: #FFA200;
+  }
+  &:active {
+    transform: translateY(-10px); /* ทำให้ปุ่มดูเหมือนถูกกดลงไป */
+    background-color: #6EDA78; /* [ตามที่คุณต้องการ] พื้นหลังเปลี่ยนเป็นสีเขียว */
+  }
+}
+
+.shapeCardDouble {
+  width: 464px; /* (220 * 2) + 24px (gap 1.5rem) */
+}
+
+.shapeGraphicContainer {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.actionLabel {
+  position: absolute; 
+  background-color: #6EDA78;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 16px;
+  bottom: -16px;
+}
+
+/* --- [แก้ไข] รูปทรงต่างๆ (ขยายขนาดทั้งหมดให้ใหญ่ขึ้นอีก) --- */
+.shape { width: 0; height: 0; }
+.triangleUp { @extend .shape; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 80px solid #555; }
+.triangleDown { @extend .shape; border-left: 50px solid transparent; border-right: 50px solid transparent; border-top: 80px solid #555; }
+.triangleLeft { @extend .shape; border-top: 50px solid transparent; border-bottom: 50px solid transparent; border-right: 80px solid #555; }
+.triangleRight { @extend .shape; border-top: 50px solid transparent; border-bottom: 50px solid transparent; border-left: 80px solid #555; }
+.square { width: 85px; height: 85px; background-color: #555; }
+.rectangle { width: 130px; height: 85px; background-color: #555; }
+.circle { width: 85px; height: 85px; background-color: #555; border-radius: 50%; }
+.oval { width: 130px; height: 85px; background-color: #555; border-radius: 50%; }
+.trapezoid { width: 130px; height: 0; border-bottom: 85px solid #555; border-left: 30px solid transparent; border-right: 30px solid transparent; }
+.parallelogram { width: 130px; height: 85px; background: #555; transform: skew(-20deg); }

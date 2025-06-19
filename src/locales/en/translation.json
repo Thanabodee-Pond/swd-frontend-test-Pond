@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Layout & Style",
+  "moveShapeBtn": "Move Shape",
+  "movePositionBtn": "Move Position",
+  "test1Title": "Test 1",
+  "test1Desc": "Layout & Style",
+  "test2Title": "Test 2",
+  "test2Desc": "Connect API",
+  "test3Title": "Test 3",
+  "test3Desc": "Form & Table",
+  "homeBtn": "Home",
+
+  "formTitleLabel": "Title",
+  "formFirstnameLabel": "Firstname",
+  "formLastnameLabel": "Lastname",
+  "formBirthdayLabel": "Birthday",
+  "formNationalityLabel": "Nationality",
+  "formCitizenIdLabel": "CitizenID",
+  "formGenderLabel": "Gender",
+  "formMobilePhoneLabel": "Mobile Phone",
+  "formPassportNoLabel": "Passport No",
+  "formExpectedSalaryLabel": "Expected Salary",
+  "formResetBtn": "RESET",
+  "formSubmitBtn": "SUBMIT",
+  
+  "tableSelectAll": "Select All",
+  "tableDeleteBtn": "DELETE",
+  "tableNameHeader": "Name",
+  "tableGenderHeader": "Gender",
+  "tableMobileHeader": "Mobile Phone",
+  "tableNationalityHeader": "Nationality",
+  "tableManageHeader": "MANAGE"
+}
