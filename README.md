@@ -6,7 +6,9 @@ This repository contains the submission for the frontend developer test from Swi
 
 Here is a short video demonstrating the application's features, including creating, editing, sorting, and deleting records, as well as language switching.
 
-![Application Demo](https://youtu.be/KCj4ILKRnC0)
+
+## 🚀 Live Demo
+**[➡️ View the live application here](https://youtu.be/KCj4ILKRnC0)**
 
 ## ✨ Features
 
